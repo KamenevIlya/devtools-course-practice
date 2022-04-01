@@ -9,7 +9,7 @@ TEST(OpeartionSuite, SumTest) {
   ComplexNumber cn2(6, 3);
 
   ComplexNumber cn3 = cn1 + cn2;
-  
+
   ASSERT_EQ(cn3.getRe(), 14);
   ASSERT_EQ(cn3.getIm(), 7);
 }
