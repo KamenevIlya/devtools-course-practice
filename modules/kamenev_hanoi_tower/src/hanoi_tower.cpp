@@ -6,9 +6,9 @@
 
 HanoiTower::HanoiTower() {}
 
-explicit HanoiTower::HanoiTower(int ringCount) {
+HanoiTower::HanoiTower(int ringCount) {
   _ringCount = ringCount;
-  for (size_t i = 1; i <= _ringCount; i++) {
+  for (int i = 1; i <= _ringCount; i++) {
     _fromCol.push(i);
   }
 }
@@ -92,7 +92,7 @@ void HanoiTower::SolveHanoi(int ringCount) {
   while (!_toCol.empty()) {
     _toCol.pop();
   }
-  for (size_t i = 1; i <= _ringCount; i++) {
+  for (int i = 1; i <= _ringCount; i++) {
     _fromCol.push(i);
   }
   SolveHanoiRecursive(ringCount, _fromNum, _toNum);
@@ -107,6 +107,7 @@ int HanoiTower::GetColSize(int colNum) {
     case 3:
       return _bufCol.size();
   }
+  return 0;
 }
 
 void HanoiTower::PrintAllInstructions() {
