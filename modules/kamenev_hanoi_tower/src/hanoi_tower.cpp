@@ -1,6 +1,7 @@
 // Copyright 2022 Kamenev Ilya
 
 #include "include/hanoi_tower.h"
+#include <string>
 #include <iostream>
 
 HanoiTower::HanoiTower() {}
@@ -12,7 +13,7 @@ explicit HanoiTower::HanoiTower(int ringCount) {
   }
 }
 
-HanoiTower::HanoiTower(int ringCount, bool isInstructionPrinted) 
+HanoiTower::HanoiTower(int ringCount, bool isInstructionPrinted)
   : HanoiTower(ringCount) {
   _isInstructionPrinted = isInstructionPrinted;
 }
@@ -60,7 +61,8 @@ void HanoiTower::MakeStep(int from, int to) {
 }
 
 void HanoiTower::AddInstruction(int from, int to) {
-  std::string instruction = "Move from " + std::to_string(from) + " to " + std::to_string(to) + "\n";
+  std::string instruction = "Move from " + std::to_string(from) + 
+      " to " + std::to_string(to) + "\n";
   _instructions.push_back(instruction);
 }
 
@@ -97,7 +99,7 @@ void HanoiTower::SolveHanoi(int ringCount) {
 }
 
 int HanoiTower::GetColSize(int colNum) {
-  switch (colNum) { 
+  switch (colNum) {
     case 1:
       return _fromCol.size();
     case 2:

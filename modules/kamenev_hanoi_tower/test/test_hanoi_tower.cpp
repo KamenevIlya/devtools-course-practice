@@ -20,7 +20,7 @@ TEST(HanoiTower, CtorActivePrintTest) {
 }
 
 TEST(HanoiTower, CreatedTowerFromTest) {
-  // Arrange, 
+  // Arrange,
   HanoiTower tower(5);
   // Act, Assert
   EXPECT_EQ(tower.GetColSize(1), 5);
