@@ -5,18 +5,19 @@
 
 HanoiTower::HanoiTower() {}
 
-HanoiTower::HanoiTower(int ringCount) {
+explicit HanoiTower::HanoiTower(int ringCount) {
   _ringCount = ringCount;
   for (size_t i = 1; i <= _ringCount; i++) {
     _fromCol.push(i);
   }
 }
 
-HanoiTower::HanoiTower(int ringCount, bool isInstructionPrinted) : HanoiTower(ringCount) {
+HanoiTower::HanoiTower(int ringCount, bool isInstructionPrinted) 
+  : HanoiTower(ringCount) {
   _isInstructionPrinted = isInstructionPrinted;
 }
 
-void HanoiTower::PrintLastInstruction() { 
+void HanoiTower::PrintLastInstruction() {
   if (!_instructions.empty()) {
     std::cout << _instructions.back();
   }
@@ -58,7 +59,7 @@ void HanoiTower::MakeStep(int from, int to) {
   }
 }
 
-void HanoiTower::AddInstruction(int from, int to) { 
+void HanoiTower::AddInstruction(int from, int to) {
   std::string instruction = "Move from " + std::to_string(from) + " to " + std::to_string(to) + "\n";
   _instructions.push_back(instruction);
 }
@@ -85,10 +86,10 @@ void HanoiTower::SolveHanoi(int ringCount) {
   _ringCount = ringCount;
   while (!_fromCol.empty()) {
     _fromCol.pop();
-  };
+  }
   while (!_toCol.empty()) {
     _toCol.pop();
-  };
+  }
   for (size_t i = 1; i <= _ringCount; i++) {
     _fromCol.push(i);
   }
@@ -106,8 +107,8 @@ int HanoiTower::GetColSize(int colNum) {
   }
 }
 
-void HanoiTower::PrintAllInstructions() { 
-  for(auto &el : _instructions) {
+void HanoiTower::PrintAllInstructions() {
+  for (auto &el : _instructions) {
     std::cout << el;
   }
 }
