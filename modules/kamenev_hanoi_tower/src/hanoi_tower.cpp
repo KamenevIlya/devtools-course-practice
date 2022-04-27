@@ -61,7 +61,7 @@ void HanoiTower::MakeStep(int from, int to) {
 }
 
 void HanoiTower::AddInstruction(int from, int to) {
-  std::string instruction = "Move from " + std::to_string(from) + 
+  std::string instruction = "Move from " + std::to_string(from) +
       " to " + std::to_string(to) + "\n";
   _instructions.push_back(instruction);
 }
