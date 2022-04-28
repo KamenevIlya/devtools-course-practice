@@ -123,3 +123,35 @@ TEST(HanoiTower, SolveHanoiSomeCallsBufTest) {
   // Assert
   EXPECT_EQ(tower.GetColSize(3), 0);
 }
+
+TEST(HanoiTower, SolveHanoiWithPrintingInstructionsTest) {
+  // Arrange
+  HanoiTower tower(5, true);
+  // Act, Assert
+  ASSERT_NO_THROW(tower.SolveHanoi());
+}
+
+TEST(HanoiTower, WrongRingCountValueTest) {
+  // Arrange
+  HanoiTower tower;
+  // Act, Assert
+  ASSERT_NO_THROW(tower.SolveHanoi(-5));
+}
+
+TEST(HanoiTower, PrintAllInstructionsTest) {
+  // Arrange
+  HanoiTower tower(5);
+  // Act
+  tower.SolveHanoi();
+  // Assert
+  ASSERT_NO_THROW(tower.PrintAllInstructions());
+}
+
+TEST(HanoiTower, WrongColNumValueTest) {
+  // Arrange
+  HanoiTower tower(5);
+  // Act
+  tower.SolveHanoi();
+  // Assert
+  EXPECT_EQ(tower.GetColSize(4), 0);
+}
