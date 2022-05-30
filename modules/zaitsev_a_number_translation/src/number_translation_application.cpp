@@ -21,7 +21,8 @@ void NumberTranslationApp::help(const char* appname,
          <<
 
       "Where argument is string or integer number, "
-         << "and <operation> is one of 'translating_a_number_into_a_word' or 'translating_a_word_into_a_number'.\n";
+         << "and <operation> is one of 'translating_a_number_into_a_word' "
+         << "or 'translating_a_word_into_a_number'.\n";
 
   m_message = stream.str();
 }
@@ -114,7 +115,6 @@ std::string NumberTranslationApp::operator()(int argc,
         word += argv[i];
       }
     }
-    
     operation = tryParseToOperation(argv[argc - 1]);
   } catch (const std::string& stringException) {
     return stringException;
