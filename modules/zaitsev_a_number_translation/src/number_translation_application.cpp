@@ -1,6 +1,7 @@
 // Copyright 2022 Zarubin Mikhail
 
 #include <sstream>
+#include <cstring>
 #include <string>
 #include <vector>
 
