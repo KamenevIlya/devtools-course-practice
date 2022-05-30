@@ -29,20 +29,20 @@ void NumberTranslationApp::help(const char* appname,
 }
 
 bool validateTypeOfArguments(int argc, const char** argv) {
-  for (int i = 0; i < strlen(argv[2]); i++) {
+  for (size_t i = 0; i < strlen(argv[2]); i++) {
     if (!std::isalpha(argv[2][i]) || !std::isblank(argv[2][i])) {
       return false;
     }
   }
 
   if (std::isdigit(argv[1][0])) {
-    for (int i = 1; i < strlen(argv[1]); i++) {
+    for (size_t i = 1; i < strlen(argv[1]); i++) {
       if (!std::isdigit(argv[1][i])) {
         return false;
       }
     }
   } else {
-    for (int i = 1; i < strlen(argv[1]); i++) {
+    for (size_t i = 1; i < strlen(argv[1]); i++) {
       if (!std::isalpha(argv[2][i]) || !std::isblank(argv[2][i])) {
         return false;
       }
